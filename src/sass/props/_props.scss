@@ -1,0 +1,147 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.bg {
+    min-height: calc(100vh - 6rem);
+    background-color: #ffe0cb;
+}
+
+.props {
+    padding: 3rem 0 0 0;
+
+    &__heading {
+        text-align: center;
+        margin: 0 0 2rem 0;
+        font-size: 2.7rem;
+    }
+
+    &__flex {
+       display: grid;
+       grid-template-columns: repeat(2, 1fr);
+       align-items: flex-end;
+       gap: 2rem;
+
+        @include m.tablet { 
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-end;
+            gap: 2rem;
+
+        } 
+    }
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__label {
+       display: block; 
+       margin-bottom: .8rem;
+       font-weight: 600;
+    }
+
+    &__select {
+        all: unset;
+        background-color: #fcfcfc;
+        padding: 1rem 0;
+        width: 100%;
+        text-align: center;
+        border: 2px solid v.$primario;
+        border-radius: 2px;
+        font-size: 1.7rem;
+        font-weight: 500;
+
+        @include m.tablet { 
+            width: 14rem;
+        }
+    }
+
+    &__input {
+        background-color: #fcfcfc;
+        outline: none;
+        padding: 1rem 0;
+        width: 100%;
+        text-align: center;
+        border: 2px solid v.$primario;
+        border-radius: 2px;
+        font-size: 1.7rem;
+        font-weight: 500;
+
+        @include m.tablet { 
+            width: 14rem;
+        }
+    }
+
+    &__button {
+        background-color:  v.$primario;
+        border: none;
+        color: v.$blanco;
+        width: 100%;
+        padding: 1.1rem 0;
+        border-radius: 2px;
+        font-weight: 500;
+        font-size: 1.9rem;
+
+        &:hover {
+            background-color: lighten(v.$primario, 5%);
+            cursor: pointer;
+        }
+
+        @include m.tablet { 
+            width: 12rem;
+        }
+    }
+}
+
+.content {
+    margin: 3rem auto 2rem auto;
+    
+    &__heading {
+        margin-bottom: 2rem;
+        text-align: center;
+        font-size: 2.7rem;
+    }
+
+    &__flex {
+        background-color: #fcfcfc;
+        height: 40rem;
+        padding: 1rem 1rem;
+        border: 3px solid v.$primario;
+        border-radius: 3px;
+        display: flex;
+        flex-wrap: wrap;
+
+        @include m.tablet { 
+            height: 40rem;
+        }
+    }
+}
+
+.box {
+    width: 4.5rem;
+    height: 4.5rem; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 1.8rem;
+
+    @include m.tablet { 
+        font-size: 2.1rem;
+        width: 6rem;
+        height: 6rem;
+    }
+
+    &:nth-child(odd){
+        background-color: lighten($color: v.$secundario, $amount: 24);
+        border: 3px solid darken(v.$secundario, 20%);
+    }
+
+    &:nth-child(even){
+        background-color: lighten($color: v.$terciario, $amount: 25);
+        border: 3px solid darken(v.$terciario, 8%);
+    }
+}
