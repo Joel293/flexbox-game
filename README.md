@@ -1,4 +1,4 @@
-# React Timeline component
+# Simple flexbox game
 
 ## To run in development
 
